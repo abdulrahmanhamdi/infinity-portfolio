@@ -6,7 +6,8 @@ export default function CourseCard({ course }) {
     <div className="course-card">
       <h3 className="course-title">{course.title}</h3>
       <span className="course-category">{course.category}</span>
-      <p className="course-description">{course.description}</p>
+      {/* Use the short description here */}
+      <p className="course-description">{course.short_description}</p>
       <Link to={course.link} className="course-link">DETAILS</Link>
     </div>
   );

@@ -6,7 +6,7 @@ export default function LanguagesSection() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section className="languages-section" ref={ref}>
+    <section className="languages-section" id="languages" ref={ref}>
       <div className="container text-center">
         <h2 className="section-title">Language <span>Skills</span></h2>
         <div className="row justify-content-center">

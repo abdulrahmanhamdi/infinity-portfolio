@@ -9,7 +9,7 @@ export default function SkillsSection() {
   });
 
   return (
-    <section className="skills-section" ref={ref}>
+    <section className="skills-section" id="skills" ref={ref}>
       <div className="container">
         <h2 className="section-title text-center">Technical <span>Skills</span></h2>
         <div className="row">

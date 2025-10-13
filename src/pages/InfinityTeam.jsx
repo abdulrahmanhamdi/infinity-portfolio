@@ -25,7 +25,7 @@ export default function InfinityTeam() {
       </section>
 
       {/* Courses Section */}
-      <section className="courses-section">
+      <section className="courses-section" id="courses">
         <div className="container text-center">
           <FadeInWhenVisible>
             <h2 className="section-title">

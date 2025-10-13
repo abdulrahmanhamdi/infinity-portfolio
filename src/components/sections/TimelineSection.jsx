@@ -4,7 +4,7 @@ import TimelineItem from '../cards/TimelineItem';
 
 export default function TimelineSection() {
   return (
-    <section className="timeline-section">
+    <section className="timeline-section" id="timeline">
       <div className="container">
         <h2 className="section-title text-center">
           My <span>Journey</span>

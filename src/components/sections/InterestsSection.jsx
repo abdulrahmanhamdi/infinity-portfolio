@@ -6,7 +6,7 @@ export default function InterestsSection() {
     const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section className="interests-section" ref={ref}>
+    <section className="interests-section" id="interests" ref={ref}>
       <div className="container text-center">
         <h2 className="section-title">Personal <span>Interests</span></h2>
         <div className={`interest-grid ${inView ? 'is-visible' : ''}`}>

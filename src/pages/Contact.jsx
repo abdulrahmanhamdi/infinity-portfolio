@@ -16,9 +16,9 @@ export default function Contact() {
     e.preventDefault();
     setStatus('Sending...');
 
-    const serviceID = 'YOUR_SERVICE_ID';
-    const templateID = 'YOUR_TEMPLATE_ID';
-    const publicKey = 'YOUR_PUBLIC_KEY';
+    const serviceID = 'service_ueuwy9e';
+    const templateID = 'template_mwmscf3';
+    const publicKey = '6sI2w087pXXbjM8TR';
 
     emailjs.send(serviceID, templateID, formState, publicKey)
       .then(() => {

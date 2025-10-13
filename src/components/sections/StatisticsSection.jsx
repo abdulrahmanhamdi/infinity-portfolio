@@ -5,7 +5,7 @@ import FadeInWhenVisible from '../ui/FadeInWhenVisible';
 
 export default function StatisticsSection() {
   return (
-    <section className="stats-section">
+    <section className="stats-section" id="stats">
       <div className="container">
         <FadeInWhenVisible>
           <div className="row text-center">

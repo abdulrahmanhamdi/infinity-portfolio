@@ -1,11 +1,11 @@
+// src/components/ui/ThemeToggle.jsx
 import { useTheme } from "../../hooks/useTheme.js";
 
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
-
   return (
-    // Change className here
-    <button onClick={toggleTheme} className="icon-btn"> 
+    // Changed className here
+    <button onClick={toggleTheme} className="theme-toggle-btn">
       {theme === "light" ? (
         <i className="bi bi-moon-stars-fill"></i>
       ) : (

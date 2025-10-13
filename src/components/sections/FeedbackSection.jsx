@@ -17,16 +17,17 @@ export default function FeedbackSection() {
       message: message,
     };
 
-    const serviceID = 'YOUR_SERVICE_ID';
-    const templateID = 'YOUR_TEMPLATE_ID';
-    const publicKey = 'YOUR_PUBLIC_KEY';
+    const serviceID = 'service_8a9w77v';
+    const templateID = 'template_hwbfr0w';
+    const publicKey = '6sI2w087pXXbjM8TR';
 
     emailjs.send(serviceID, templateID, templateParams, publicKey)
       .then(() => {
         setStatus('✅ Feedback sent successfully!');
         setMessage('');
         setRating(0);
-      }, (error) => {
+      })
+      .catch((error) => {
         setStatus('❌ Failed to send feedback.');
         console.error(error);
       });
@@ -37,12 +38,17 @@ export default function FeedbackSection() {
   return (
     <section className="feedback-section">
       <div className="container text-center">
-        <h2 className="section-title">Your <span>Feedback</span></h2>
-        <p className="section-subtitle">Help us improve by sharing your thoughts.</p>
-        
+        <h2 className="section-title">
+          Your <span>Feedback</span>
+        </h2>
+        <p className="section-subtitle">
+          Help us improve by sharing your thoughts.
+        </p>
+
         <form ref={form} onSubmit={handleSendFeedback} className="mx-auto" style={{ maxWidth: '600px' }}>
+          {/* ⭐ Star Rating */}
           <div className="star-rating mb-4">
-            {stars.map(star => (
+            {stars.map((star) => (
               <i
                 key={star}
                 className={`bi bi-star-fill ${(hoverRating || rating) >= star ? 'selected' : ''}`}
@@ -53,6 +59,7 @@ export default function FeedbackSection() {
             ))}
           </div>
 
+          {/* ✉️ Feedback Message */}
           <textarea
             name="message"
             className="form-control mb-3"
@@ -63,8 +70,10 @@ export default function FeedbackSection() {
             required
           ></textarea>
 
-          <button type="submit" className="btn btn-primary w-100">Send Feedback</button>
-          
+          <button type="submit" className="btn btn-primary w-100">
+            Send Feedback
+          </button>
+
           {status && <p className="mt-3">{status}</p>}
         </form>
       </div>

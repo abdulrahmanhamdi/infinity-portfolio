@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 
 export default function TestimonialsSection() {
   return (
-    <section className="testimonials-section">
+    <section className="testimonials-section" id="testimonials">
       <div className="container">
         <FadeInWhenVisible>
           <h2 className="section-title text-center">What <span>Students Say</span></h2>

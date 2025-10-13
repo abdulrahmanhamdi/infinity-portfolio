@@ -4,7 +4,7 @@ import FadeInWhenVisible from '../ui/FadeInWhenVisible';
 
 export default function LearningPathSection() {
   return (
-    <section className="learning-path-section">
+    <section className="learning-path-section" id="learning-path">
       <div className="container">
         <FadeInWhenVisible>
           <h2 className="section-title text-center">Learning Path To AI</h2>
