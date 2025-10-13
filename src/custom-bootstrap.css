@@ -1,0 +1,44 @@
+/* Override Bootstrap colors with your variables */
+:root {
+  --bs-body-bg: var(--bg-color);
+  --bs-body-color: var(--text-color);
+  --bs-primary: #3182ce;
+  --bs-secondary: #7447ae;
+  --bs-success: #239c97;
+  --bs-info: #37a7ff;
+  --bs-warning: #ffbe61;
+  --bs-danger: #b83280;
+  --bs-light: #f2f2f2;
+  --bs-dark: #1a202c;
+}
+
+/* Navbar and footer alignment with your theme */
+.navbar, .footer {
+  background: var(--footer-bg) !important;
+  color: var(--btn-color) !important;
+}
+
+.nav-link {
+  color: var(--btn-color) !important;
+  font-weight: 500;
+}
+.nav-link:hover {
+  color: var(--link-hover-color) !important;
+}
+
+.btn-primary {
+  background: var(--btn-bg);
+  border: none;
+}
+.btn-primary:hover {
+  background: var(--btn-hover-bg);
+}
+
+/* General typography harmony */
+h1, h2, h3, h4, h5 {
+  color: var(--section-title-color);
+}
+
+p, span {
+  color: var(--text-color);
+}

@@ -1,0 +1,30 @@
+/* src/styles/theme.css */
+
+body[data-theme="light"] {
+  --bg-color: #f2f2f2;
+  --text-color: #212529;
+  --footer-bg: #e9ecef; 
+  --btn-color: #212529; 
+  --link-hover-color: #007bff;
+  
+  --bs-body-bg: var(--bg-color);
+  --bs-body-color: var(--text-color);
+}
+
+body[data-theme="dark"] {
+  --bg-color: #1a202c;
+  --text-color: #f7fafc;
+  --footer-bg: #111827;
+  --btn-color: #f8f9fa; 
+  --link-hover-color: #90cdf4;
+
+  /* Override Bootstrap variables */
+  --bs-body-bg: var(--bg-color);
+  --bs-body-color: var(--text-color);
+}
+
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
