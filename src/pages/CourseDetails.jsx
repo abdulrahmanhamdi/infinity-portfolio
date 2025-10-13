@@ -1,13 +1,24 @@
 // src/pages/CourseDetails.jsx
 import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 import { coursesData } from '../data/courses';
-import CourseMaterialsSection from '../components/sections/CourseMaterialsSection'; // <-- استيراد
-import AboutCourseSection from '../components/sections/AboutCourseSection';     // <-- استيراد
-import CourseContactBanner from '../components/sections/CourseContactBanner';   // <-- استيراد
+import CourseMaterialsSection from '../components/sections/CourseMaterialsSection';
+import AboutCourseSection from '../components/sections/AboutCourseSection';
+import CourseContactBanner from '../components/sections/CourseContactBanner';
 
 export default function CourseDetails() {
   const { slug } = useParams();
   const course = coursesData.find(c => c.slug === slug);
+
+  // --- ADDED: This block sets the browser tab title ---
+  useEffect(() => {
+    if (course) {
+      document.title = `${course.title} | Infinity Team`;
+    } else {
+      document.title = 'Course Not Found | Infinity Team';
+    }
+  }, [course]);
+  // ----------------------------------------------------
 
   if (!course) {
     return (
@@ -32,7 +43,10 @@ export default function CourseDetails() {
       <CourseMaterialsSection materials={course.materials} />
 
       {/* About Course Section */}
-      <AboutCourseSection long_description={course.long_description}  instructor={course.instructor} />
+      <AboutCourseSection 
+        long_description={course.long_description} 
+        instructor={course.instructor} 
+      />
 
       {/* Course Contact Banner */}
       <CourseContactBanner />

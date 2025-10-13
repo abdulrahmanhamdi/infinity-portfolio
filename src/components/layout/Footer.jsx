@@ -9,9 +9,9 @@ export default function Footer() {
           {/* Column 1: About */}
           <div className="col-lg-4 col-md-6 mb-4">
             <h5>About Me</h5>
-            <p className="text-muted">
+            
               A passionate Computer & AI Engineer dedicated to building innovative and efficient digital solutions.
-            </p>
+            
           </div>
 
           {/* Column 2: Quick Links */}

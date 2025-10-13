@@ -1,5 +1,5 @@
 // src/pages/Contact.jsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import FadeInWhenVisible from '../components/ui/FadeInWhenVisible';
 import ContactInfoCard from '../components/cards/ContactInfoCard';
@@ -7,6 +7,10 @@ import ContactInfoCard from '../components/cards/ContactInfoCard';
 export default function Contact() {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('');
+
+  useEffect(() => {
+    document.title = "Contact Me | Abdulrahman Hamdi";
+  }, []);
 
   const handleInputChange = (e) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
@@ -16,9 +20,10 @@ export default function Contact() {
     e.preventDefault();
     setStatus('Sending...');
 
-    const serviceID = 'service_ueuwy9e';
-    const templateID = 'template_mwmscf3';
-    const publicKey = '6sI2w087pXXbjM8TR';
+    // Safely read keys from environment variables
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     emailjs.send(serviceID, templateID, formState, publicKey)
       .then(() => {

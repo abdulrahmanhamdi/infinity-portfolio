@@ -9,6 +9,12 @@ export default function Portfolio() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // Set the browser tab title
+  useEffect(() => {
+    document.title = "Portfolio | Abdulrahman Hamdi";
+  }, []);
+
+  // Fetch project data from Firestore
   useEffect(() => {
     const fetchProjects = async () => {
       try {
@@ -24,6 +30,7 @@ export default function Portfolio() {
     fetchProjects();
   }, []);
 
+  // Filter logic
   const categories = ['All', ...new Set(projects.map(p => p.category))];
   const [activeFilter, setActiveFilter] = useState('All');
   const filteredProjects =
@@ -31,6 +38,7 @@ export default function Portfolio() {
       ? projects
       : projects.filter(project => project.category === activeFilter);
 
+  // Modal logic
   const [selectedProject, setSelectedProject] = useState(null);
   const handleCardClick = (project) => setSelectedProject(project);
   const handleCloseModal = () => setSelectedProject(null);
@@ -55,7 +63,15 @@ export default function Portfolio() {
               A complete showcase of my work and projects.
             </p>
             <div className="filter-buttons">
-              {/* ... (buttons logic remains the same) ... */}
+              {categories.map(category => (
+                <button
+                  key={category}
+                  onClick={() => setActiveFilter(category)}
+                  className={`filter-btn ${activeFilter === category ? 'active' : ''}`}
+                >
+                  {category}
+                </button>
+              ))}
             </div>
           </div>
         </FadeInWhenVisible>

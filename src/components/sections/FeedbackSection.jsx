@@ -1,5 +1,5 @@
 // src/components/sections/FeedbackSection.jsx
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 export default function FeedbackSection() {
@@ -7,19 +7,20 @@ export default function FeedbackSection() {
   const [hoverRating, setHoverRating] = useState(0);
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('');
-  const form = useRef();
 
   const handleSendFeedback = (e) => {
     e.preventDefault();
+    setStatus('Sending...');
 
     const templateParams = {
       rating: rating,
       message: message,
     };
 
-    const serviceID = 'service_8a9w77v';
-    const templateID = 'template_hwbfr0w';
-    const publicKey = '6sI2w087pXXbjM8TR';
+    // Safely read the FEEDBACK keys from environment variables
+    const serviceID = import.meta.env.VITE_EMAILJS_FEEDBACK_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_FEEDBACK_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     emailjs.send(serviceID, templateID, templateParams, publicKey)
       .then(() => {
@@ -45,8 +46,7 @@ export default function FeedbackSection() {
           Help us improve by sharing your thoughts.
         </p>
 
-        <form ref={form} onSubmit={handleSendFeedback} className="mx-auto" style={{ maxWidth: '600px' }}>
-          {/* ⭐ Star Rating */}
+        <form onSubmit={handleSendFeedback} className="mx-auto" style={{ maxWidth: '600px' }}>
           <div className="star-rating mb-4">
             {stars.map((star) => (
               <i
@@ -59,7 +59,6 @@ export default function FeedbackSection() {
             ))}
           </div>
 
-          {/* ✉️ Feedback Message */}
           <textarea
             name="message"
             className="form-control mb-3"

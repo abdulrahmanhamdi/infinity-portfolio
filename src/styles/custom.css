@@ -124,22 +124,24 @@ body[data-theme="dark"] .logo-light {
 }
 
 /* --- Footer Style --- */
-/* --- New Footer Styles --- */
+/* --- New Footer Styles (Corrected for Theming) --- */
 .site-footer {
   background-color: var(--footer-bg);
   padding: 4rem 0 2rem 0;
-  color: var(--text-color);
   font-size: 0.95rem;
+  /* Set a default text color that works for dark mode */
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Override the text color for light mode */
+body[data-theme="light"] .site-footer {
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .site-footer h5 {
   font-weight: 600;
   color: var(--primary-color);
   margin-bottom: 1.5rem;
-}
-
-.site-footer .text-muted {
-  opacity: 0.7;
 }
 
 .footer-links {
@@ -152,14 +154,12 @@ body[data-theme="dark"] .logo-light {
 }
 
 .footer-links a {
-  color: var(--text-color);
+  color: inherit; /* Make links use the parent's color */
   text-decoration: none;
-  opacity: 0.8;
   transition: all 0.3s ease;
 }
 
 .footer-links a:hover {
-  opacity: 1;
   color: var(--primary-color);
   padding-left: 5px;
 }
@@ -195,7 +195,8 @@ body[data-theme="dark"] .logo-light {
 }
 
 .footer-bottom {
-  opacity: 0.6;
+  opacity: 0.8;
+  color: inherit; /* Make it use the parent's color */
 }
 
 /* --- Icon Button Style --- */

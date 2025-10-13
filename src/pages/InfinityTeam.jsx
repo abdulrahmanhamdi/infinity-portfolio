@@ -1,4 +1,5 @@
 // src/pages/InfinityTeam.jsx
+import { useEffect } from 'react';
 import { coursesData } from '../data/courses';
 import CourseCard from '../components/cards/CourseCard';
 import FadeInWhenVisible from '../components/ui/FadeInWhenVisible';
@@ -9,6 +10,9 @@ import AboutTeamSection from '../components/sections/AboutTeamSection';
 import FeedbackSection from '../components/sections/FeedbackSection';
 
 export default function InfinityTeam() {
+        useEffect(() => {
+    document.title = "Infinity Team | Abdulrahman Hamdi";
+  }, []);
   return (
     <>
       {/* Hero Section for this page */}
