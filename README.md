@@ -2,7 +2,7 @@
 
 This is the official repository for my personal portfolio and the "Infinity Team" educational platform. It's a modern, single-page application built with React to showcase my skills, projects, and educational content in an interactive and visually appealing way.
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https:/abdulrahmanhamdi.com.tr)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://abdulrahmanhamdi.com.tr/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-abdulrahman--hamdi-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/abdulrahman-hamdi-54a8a6143/)
 
 ---
