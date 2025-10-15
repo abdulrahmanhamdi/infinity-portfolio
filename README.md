@@ -26,19 +26,19 @@ The entire platform is designed with a strong focus on user experience, featurin
 
 ---
 ## **Key Features**
-✨ **Dynamic Portfolio from Firestore**: The portfolio section is not static; it fetches project data in real-time from a Cloud Firestore database, allowing for easy updates without redeploying the site.
+**Dynamic Portfolio from Firestore**: The portfolio section is not static; it fetches project data in real-time from a Cloud Firestore database, allowing for easy updates without redeploying the site.
 
-📚 **Interactive Course Platform**: A dedicated section for courses, with each course having its own detailed page displaying materials like PDFs, lecture videos, and notes in an organized fashion.
+**Interactive Course Platform**: A dedicated section for courses, with each course having its own detailed page displaying materials like PDFs, lecture videos, and notes in an organized fashion.
 
-🎨 **Advanced UI/UX**: The user interface is enhanced with modern features to create an engaging experience:
+**Advanced UI/UX**: The user interface is enhanced with modern features to create an engaging experience:
 * **Light/Dark Mode**: A theme toggle that saves the user's preference in their browser.
 * **Voice Search**: An advanced voice-activated search bar to easily navigate the site's content.
 * **Cursor Glow Effect**: A subtle, aesthetic glow that follows the user's cursor across the screen.
 * **Animations**: Smooth, scroll-based fade-in animations for a dynamic feel.
 
-📱 **Fully Responsive Design**: The layout is built with Bootstrap and custom CSS to ensure a seamless experience on all devices, from mobile phones to desktop computers.
+**Fully Responsive Design**: The layout is built with Bootstrap and custom CSS to ensure a seamless experience on all devices, from mobile phones to desktop computers.
 
-✉️ **Backend-less Forms**: Contact and feedback forms are powered by EmailJS, allowing for direct email submissions without the need for a dedicated backend server.
+**Backend-less Forms**: Contact and feedback forms are powered by EmailJS, allowing for direct email submissions without the need for a dedicated backend server.
 
 ---
 ## **Built With**
@@ -144,10 +144,12 @@ src/
 ├── styles/         # CSS files (Bootstrap, custom styles, theme)
 ├── App.jsx         # Main application component with routing
 └── main.jsx        # Application entry point
+```
 
 ---
 ## **Contact**
-**Abdulrahman Hamdi**
-* **Email**: abdulrahmanh524@gmail.com
-* **LinkedIn**: [in/abdulrahman-hamdi](https://www.linkedin.com/in/abdulrahman-hamdi-54a8a6143/)
-* **GitHub**: [@abdulrahmanhamdi](https://github.com/abdulrahmanhamdi)
+
+**Abdulrahman Hamdi**  
+**Email**: [abdulrahmanh524@gmail.com](mailto:abdulrahmanh524@gmail.com)  
+**LinkedIn**: [linkedin.com/in/abdulrahman-hamdi](https://www.linkedin.com/in/abdulrahman-hamdi-54a8a6143/)  
+**GitHub**: [github.com/abdulrahmanhamdi](https://github.com/abdulrahmanhamdi)
