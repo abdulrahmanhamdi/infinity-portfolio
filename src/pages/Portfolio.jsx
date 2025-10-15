@@ -1,99 +1,46 @@
 // src/pages/Portfolio.jsx
 import { useState, useEffect } from 'react';
-import { getProjects } from '../services/firestore';
-import ProjectCard from '../components/cards/ProjectCard';
-import Modal from '../components/ui/Modal';
+import { portfolioData } from '../data/portfolioData'; // Step 1: Import local data
+import FeaturedProjectCard from '../components/cards/FeaturedProjectCard'; // Step 2: We will create this component next
 import FadeInWhenVisible from '../components/ui/FadeInWhenVisible';
+// Note: Modal component is no longer used in this new design, so it can be removed.
 
 export default function Portfolio() {
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // Use the static data directly, no need for loading or firestore fetching for now
+  const [projects, setProjects] = useState(portfolioData);
 
   // Set the browser tab title
   useEffect(() => {
     document.title = "Portfolio | Abdulrahman Hamdi";
   }, []);
 
-  // Fetch project data from Firestore
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const data = await getProjects();
-        setProjects(data);
-      } catch (error) {
-        console.error("Error fetching projects:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProjects();
-  }, []);
-
-  // Filter logic
-  const categories = ['All', ...new Set(projects.map(p => p.category))];
-  const [activeFilter, setActiveFilter] = useState('All');
-  const filteredProjects =
-    activeFilter === 'All'
-      ? projects
-      : projects.filter(project => project.category === activeFilter);
-
-  // Modal logic
-  const [selectedProject, setSelectedProject] = useState(null);
-  const handleCardClick = (project) => setSelectedProject(project);
-  const handleCloseModal = () => setSelectedProject(null);
-
-  if (loading) {
-    return (
-      <div className="container py-5 text-center">
-        <h2>Loading projects...</h2>
-      </div>
-    );
-  }
+  // Filter and Modal logic has been removed to simplify for the new design.
+  // The new card will link to a details page instead of opening a modal.
 
   return (
-    <>
-      <div className="container py-5">
-        <FadeInWhenVisible>
-          <div className="text-center mb-5">
-            <h1 className="section-title">
-              My <span>Portfolio</span>
-            </h1>
-            <p className="section-subtitle">
-              A complete showcase of my work and projects.
-            </p>
-            <div className="filter-buttons">
-              {categories.map(category => (
-                <button
-                  key={category}
-                  onClick={() => setActiveFilter(category)}
-                  className={`filter-btn ${activeFilter === category ? 'active' : ''}`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          </div>
-        </FadeInWhenVisible>
+    <div className="container py-5">
+      <FadeInWhenVisible>
+        <div className="text-center mb-5">
+          <h1 className="section-title">
+            My <span>Portfolio</span>
+          </h1>
+          <p className="section-subtitle">
+            A selection of projects that showcase my skills and passion for technology.
+          </p>
+        </div>
+      </FadeInWhenVisible>
 
-        <FadeInWhenVisible>
-          <div className="project-grid">
-            {filteredProjects.map(project => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                onClick={() => handleCardClick(project)}
-              />
-            ))}
-          </div>
-        </FadeInWhenVisible>
-      </div>
-
-      <Modal
-        show={!!selectedProject}
-        project={selectedProject}
-        onClose={handleCloseModal}
-      />
-    </>
+      <FadeInWhenVisible>
+        {/* Step 3: Use the new grid class and map over the projects */}
+        <div className="featured-project-grid">
+          {projects.map(project => (
+            <FeaturedProjectCard
+              key={project.id}
+              project={project}
+            />
+          ))}
+        </div>
+      </FadeInWhenVisible>
+    </div>
   );
 }

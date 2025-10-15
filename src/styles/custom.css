@@ -1682,3 +1682,357 @@ body[data-theme="dark"] {
   height: 42px;
   border-radius: 50%; /* Makes it a circle */
 }
+
+
+/* --- Featured Portfolio & Project Details Page Styles --- */
+
+/* The grid container for the portfolio page */
+.featured-project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+/* The individual project card */
+.featured-project-card {
+  position: relative; /* Needed for the overlay */
+  border-radius: 16px;
+  overflow: hidden; /* Hides parts of the image that scale out */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: block; /* Removes underline from link */
+  height: 300px;
+  background-color: var(--footer-bg); /* Fallback color while image loads */
+}
+
+/* The project image */
+.featured-project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the card */
+  transition: transform 0.4s ease-out;
+}
+
+/* --- HOVER EFFECTS --- */
+
+/* 1. Zoom the image on hover */
+.featured-project-card:hover img {
+  transform: scale(1.1);
+}
+
+/* The overlay layer */
+.featured-project-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+  display: flex;
+  align-items: flex-end; /* Aligns title to the bottom */
+  padding: 1.5rem;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.4s ease-out;
+}
+
+/* 2. Show the overlay on hover */
+.featured-project-card:hover .overlay {
+  opacity: 1;
+}
+
+/* The title inside the overlay */
+.featured-project-card .overlay h3 {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  transform: translateY(20px); /* Start slightly lower */
+  transition: transform 0.4s ease-out;
+}
+
+/* 3. Animate the title on hover */
+.featured-project-card:hover .overlay h3 {
+  transform: translateY(0);
+}
+
+
+/* --- Project Details Page --- */
+
+.project-details-page {
+  max-width: 900px; /* Constrains the width for better readability */
+  margin: 0 auto;
+}
+
+.project-details-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.project-details-category {
+  display: block;
+  text-align: center;
+  font-size: 1.1rem;
+  opacity: 0.7;
+  margin-bottom: 2.5rem;
+}
+
+.project-details-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.project-details-content h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--primary-color);
+  padding-left: 1rem;
+}
+
+.project-details-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+/* --- New Styles for Project Details Page --- */
+
+.project-details-page {
+  max-width: 950px;
+}
+
+.back-to-portfolio {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  opacity: 0.8;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.back-to-portfolio:hover {
+  color: var(--primary-color);
+  opacity: 1;
+}
+.back-to-portfolio svg {
+  margin-right: 8px;
+}
+
+.project-links {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.project-links .btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+.project-links .btn svg {
+  margin-left: 8px;
+}
+
+
+/* Section Styling */
+.project-section {
+  margin-bottom: 4rem;
+}
+
+.project-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--primary-color-light);
+  display: inline-block;
+}
+
+.project-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+/* Problem Section Layout */
+.problem-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .problem-layout {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+.problem-layout img {
+  width: 150%;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 767px) {
+  .problem-layout {
+    gap: 1.5rem; 
+  }
+  
+  .problem-layout img {
+    box-shadow: none; 
+    width: 100%;
+  }
+}
+
+/* Solution Steps */
+.solution-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.step-card {
+  background-color: var(--card-bg); /* Use a card background color from your variables */
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-color); /* Use a border color */
+}
+
+.step-card i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.step-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.step-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+/* Technology Tags */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tech-tag {
+  background-color: var(--primary-color-light);
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.gallery-grid img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-grid img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* --- New Styles for Project Layout & Table of Contents --- */
+
+/* 1. Main Layout Grid */
+.project-layout {
+  display: grid;
+  grid-template-columns: 1fr; /* Default to single column for mobile */
+  gap: 3rem;
+}
+
+/* On larger screens, use a two-column layout */
+@media (min-width: 992px) {
+  .project-layout {
+    /* 1fr for TOC, 3.5fr for content */
+    grid-template-columns: 1fr 3.5fr; 
+  }
+}
+
+
+/* 2. Table of Contents Styling */
+.table-of-contents {
+  /* This is the container for the sticky element */
+}
+
+.toc-sticky {
+  position: sticky;
+  top: 120px; /* Adjust this value based on your header's height */
+  background-color: var(--card-bg, #f8f9fa); /* Fallback color */
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color, #dee2e6);
+}
+
+.toc-sticky h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color, #dee2e6);
+}
+
+.toc-sticky ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-sticky li a {
+  display: block;
+  padding: 0.5rem 0;
+  color: var(--text-color);
+  text-decoration: none;
+  opacity: 0.8;
+  transition: all 0.2s ease-in-out;
+}
+
+.toc-sticky li a:hover {
+  opacity: 1;
+  color: var(--primary-color);
+  transform: translateX(5px);
+}
+
+/* Hide TOC on smaller screens to save space */
+@media (max-width: 991px) {
+  .table-of-contents {
+    display: none;
+  }
+}
+
+/* 3. Section Scroll Margin */
+/* Adds space above the section when jumping to it, so the title isn't hidden by a sticky header */
+.project-section {
+  scroll-margin-top: 100px; /* Adjust this value as needed */
+}
+

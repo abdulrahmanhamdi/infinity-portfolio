@@ -5,10 +5,11 @@ import Footer from "./components/layout/Footer";
 import { ThemeProvider } from "./context/ThemeContext";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
+import ProjectDetails from "./pages/ProjectDetails";
 import InfinityTeam from "./pages/InfinityTeam";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import CourseDetails from "./pages/CourseDetails"; // <-- 1. Make sure this import is here
+import CourseDetails from "./pages/CourseDetails";
 
 // Other imports...
 import BackToTopButton from './components/ui/BackToTopButton';
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio/:projectId" element={<ProjectDetails />} />
           <Route path="/infinity-team" element={<InfinityTeam />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

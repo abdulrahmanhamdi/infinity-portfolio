@@ -3,7 +3,7 @@
 export const projectsData = [
   {
     id: 'rec-sys',
-    image: 'assets/img/rec-sys.png',
+    image: 'assets/img/projects/rs/rec-sys.webp',
     title: 'Student Elective Course Recommendation System',
     category: 'Web Development / AI',
     link: 'https://github.com/abdulrahmanhamdi/OBS_System',
@@ -19,7 +19,7 @@ export const projectsData = [
   },
   {
     id: 'image-deblur',
-    image: 'public/assets/img/image-deblur.png',
+    image: '/assets/img/image-deblur.png',
     title: 'CNN-Based Image Deblurring',
     category: 'AI / Machine Learning',
     link: 'https://github.com/abdulrahmanhamdi/CNN-Based-Image-Deblurring-using-Defocused-Blur-Dataset',
@@ -27,7 +27,7 @@ export const projectsData = [
   },
   {
     id: 'plant-disease',
-    image: 'public/assets/img/plant-disease.png',
+    image: '/assets/img/plant-disease.png',
     title: 'Custom CNN-Based Plant Disease Detection',
     category: 'AI / Machine Learning',
     link: 'https://github.com/abdulrahmanhamdi/Custom-CNN-Based-Plant-Disease-Detection',
@@ -35,7 +35,7 @@ export const projectsData = [
   },
   {
     id: 'fire-detection',
-    image: 'public/assets/img/fire-detection.png',
+    image: '/assets/img/fire-detection.png',
     title: 'Object Detection of Fire and Smoke',
     category: 'AI / Computer Vision',
     link: 'https://github.com/abdulrahmanhamdi/Fire-Smoke-Detection-using-YOLOv11',
@@ -44,7 +44,7 @@ export const projectsData = [
 
   {
     id: 'modal1',
-    image: 'public/assets/img/gandc.png',
+    image: '/assets/img/gandc.png',
     title: 'GAN DCGAN Image Processing',
     category: 'Deep Learning',
     link: 'https://github.com/abdulrahmanhamdi/GAN-Project.git',
@@ -53,7 +53,7 @@ export const projectsData = [
 
   {
     id: 'modal2',
-    image: 'public/assets/img/dash.png',
+    image: '/assets/img/dash.png',
     title: 'Student Dashboard',
     category: 'Web Development',
     link: 'https://github.com/abdulrahmanhamdi/StudentDashBoard.git',
@@ -61,7 +61,7 @@ export const projectsData = [
   },
   {
     id: 'modal3',
-    image: 'public/assets/img/logo-1.png',
+    image: '/assets/img/logo-1.png',
     title: 'Sivas Syrian Students Union',
     category: 'UI / Website',
     link: 'https://ssob-9027f.web.app/',
@@ -69,7 +69,7 @@ export const projectsData = [
   },
   {
     id: 'modal4',
-    image: 'public/assets/img/lib.png',
+    image: '/assets/img/lib.png',
     title: 'Library Project',
     category: 'Front-end Website',
     link: 'https://abdulrahmanhamdi.github.io/Library-html.github.io/',
@@ -78,7 +78,7 @@ export const projectsData = [
 
   {
     id: 'modal5',
-    image: 'public/assets/img/snake.png',
+    image: '/assets/img/snake.png',
     title: 'Snake Game',
     category: 'JavaFX / GUI',
     link: 'https://github.com/abdulrahmanhamdi/SnakeGameByJava.git',
@@ -86,7 +86,7 @@ export const projectsData = [
   },
   {
     id: 'modal6',
-    image: 'public/assets/img/math.png',
+    image: '/assets/img/math.png',
     title: 'Math Game',
     category: 'JavaFX / GUI',
     link: 'https://github.com/abdulrahmanhamdi/Mathgame.git',
