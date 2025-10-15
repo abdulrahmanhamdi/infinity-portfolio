@@ -125,7 +125,10 @@ This Vite-based React application can be easily deployed to any static hosting s
 
 ---
 ## **Project Structure**
+
 The project follows a clean, component-based architecture that promotes reusability and maintainability.
+
+```bash
 src/
 ├── assets/         # Images, fonts, and other static files
 ├── components/     # Reusable UI components
@@ -141,6 +144,7 @@ src/
 ├── styles/         # CSS files (Bootstrap, custom styles, theme)
 ├── App.jsx         # Main application component with routing
 └── main.jsx        # Application entry point
+
 ---
 ## **Contact**
 **Abdulrahman Hamdi**
